@@ -3,5 +3,10 @@
 <ul>
   <li *ngFor="#person of people | async">
     Name: {{person.name}}
+    <ul>
+      <li *ngFor="#todo of person.todos | async">
+        {{ todo.text }}
+      </li>
+    </ul>
   </li>
 </ul>
