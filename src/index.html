@@ -6,7 +6,7 @@
   <base href="/">
   {{content-for 'head'}}
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  
+
   <!-- Service worker support is disabled by default.
        Install the worker script and uncomment to enable.
        Only enable service workers in production.
@@ -35,7 +35,15 @@
   <script src="thirdparty/libs.js"></script>
   <script>
     System.config({
+      map: {
+        angularfire2: 'vendor/angularfire2',
+        firebase: 'vendor/firebase/lib/firebase-web.js'
+      },
       packages: {
+        angularfire2: {
+          main: 'angularfire2.js',
+          defaultExtension: 'js'
+        },
         app: {
           format: 'register',
           defaultExtension: 'js'
