@@ -1,5 +1,17 @@
-<p>
-  plzwork Works!
-</p>
+<h1>
+  PlzWork
+</h1>
+
+<div>
+  <span *ngIf="af.auth | async">
+    Logged in as {{(af.auth | async).github.username}}
+    <br>
+    <button (click)="auth.logout()">Log out</button>
+  </span>
+  <span *ngIf="!(af.auth | async)">
+    <button (click)="auth.login()">Log in</button>
+  </span>
+</div>
+<hr>
 
 <router-outlet></router-outlet>
