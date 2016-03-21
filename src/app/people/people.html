@@ -7,6 +7,9 @@
       <li *ngFor="#todo of person.todos | async">
         {{ todo.text }}
       </li>
+      <form (submit)="person.todos.add({text: newTodo.value})">
+        <input #newTodo>
+      </form>
     </ul>
   </li>
 </ul>
