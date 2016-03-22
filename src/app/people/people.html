@@ -1,5 +1,8 @@
 <h2>People</h2>
 
+<form (submit)="people.add({name: person.value})">
+  Add a Person: <input #person>
+</form>
 <ul>
   <li *ngFor="#person of people | async; trackBy:personTrackBy">
     Name: {{person.name}}
