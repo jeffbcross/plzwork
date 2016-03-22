@@ -1,4 +1,4 @@
-import {Component} from 'angular2/core';
+import {Component, ChangeDetectionStrategy} from 'angular2/core';
 import {AngularFire} from 'angularfire2';
 import {Observable} from 'rxjs';
 import 'rxjs/add/operator/map';
@@ -9,6 +9,7 @@ import 'rxjs/add/operator/map';
   styleUrls: ['app///people/people.css'],
   providers: [],
   directives: [],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   pipes: []
 })
 export class People {
@@ -21,5 +22,9 @@ export class People {
           return person;
         });
       })
+  }
+
+  personTrackBy(index, person):string {
+    return person.$key;
   }
 }

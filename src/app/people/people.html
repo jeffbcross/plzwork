@@ -1,7 +1,7 @@
 <h2>People</h2>
 
 <ul>
-  <li *ngFor="#person of people | async">
+  <li *ngFor="#person of people | async; trackBy:personTrackBy">
     Name: {{person.name}}
     <ul>
       <li *ngFor="#todo of person.todos | async">
